@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div>
+  <img onmouseover="killAnimation('wobbleMan')" onclick="wobble()" id="wobbleMan" src="media/images/noel.jpg" width="80%" height="80%" alt="noel">
+  <img onmouseover="killAnimation('lightSpeedOut')" onclick="lightSpeedOut()" id="lightSpeedOut" src="media/images/noel.jpg" width="80%" height="80%" alt="noel">
+</div>
+
+</body>
+
+<script>
+  let wobble = () => {
+    document.getElementById("wobbleMan").className = "wobble"
+  }
+  let killAnimation = (id) => {
+    document.getElementById(id).className = ""
+  }
+
+  let lightSpeedOut = () => {
+    document.getElementById("lightSpeedOut").className = "lightSpeedOut"
+  }
+</script>
+</html>
