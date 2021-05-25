@@ -8,13 +8,20 @@
 <body>
 
 <div>
-  <img onmouseover="killAnimation('wobbleMan')" onclick="wobble()" id="wobbleMan" src="media/images/noel.jpg" width="30%" height="30%" alt="noel">
-  <img onmouseover="killAnimation('lightSpeedOut')" onclick="lightSpeedOut()" id="lightSpeedOut" src="media/images/noel.jpg" width="30%" height="30%" alt="noel">
+    <img onmouseover="killAnimation('wobbleMan')" onclick="wobbleAndAnimate()" id="wobbleMan" src="media/images/noel.jpg" width="30%" height="30%" alt="noel"/>
+    <svg>
+        <rect id="loadingBar" fill="green" stroke-width="1" height="20px" width= "20px"/>
+    </svg>
+    <img onmouseover="killAnimation('lightSpeedOut')" onclick="lightSpeedOut()" id="lightSpeedOut" src="media/images/noel.jpg" width="30%" height="30%" alt="noel"/>
 </div>
 
 </body>
 
 <script>
+    let wobbleAndAnimate = () => {
+        wobble()
+        animate()
+    }
   let wobble = () => {
     document.getElementById("wobbleMan").className = "wobble"
   }
@@ -25,5 +32,23 @@
   let lightSpeedOut = () => {
     document.getElementById("lightSpeedOut").className = "lightSpeedOut"
   }
+
+  let animate = () => {
+      let loadingBar = document.getElementById('loadingBar');
+      loadingBar.animate(
+          [
+              {
+                  transform: 'scale(1 ,1)',
+                  fill: 'green'
+              }, {
+              transform: 'scale(15 ,1)',
+              fill: 'lime'
+          }
+          ], {
+              duration: 1000,
+              iterations: 1,
+              fill: 'forwards'
+          })
+  };
 </script>
 </html>
