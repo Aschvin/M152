@@ -7,8 +7,6 @@ import Dropdown from "./components/Dropdown";
 import InfoSection from "./components/InfoSection";
 import {InfoData, InfoDataTwo} from "./data/InfoData";
 import {Animator, batch, FadeIn, ScrollContainer, ScrollPage, StickyIn, ZoomIn} from "react-scroll-motion";
-import Impressum from "./components/Impressum";
-import {ImpressumData} from "./data/ImpressumData";
 
 function App() {
     const [isOpen, setIsOpen] = useState(false)
@@ -34,11 +32,6 @@ function App() {
             <ScrollPage page={2}>
                 <Animator animation={ZoomInScrollOut}>
                     <InfoSection {...InfoDataTwo}/>
-                </Animator>
-            </ScrollPage>
-            <ScrollPage page={2}>
-                <Animator animation={ZoomInScrollOut}>
-                    <Impressum {...ImpressumData}/>
                 </Animator>
             </ScrollPage>
             <ScrollPage page={3}>

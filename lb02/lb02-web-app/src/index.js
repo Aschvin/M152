@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from "react-router-dom";
+import {Router, Switch, Route} from "react-router-dom";
+import Impressum from "./components/Impressum";
+import history from './components/History'
 
 ReactDOM.render(
   <React.StrictMode>
-      <Router>
-          <App />
+      <Router history={history}>
+          <Switch>
+              <Route path={"/impressum"} exact component={Impressum} />
+              <Route path="/" component={App} />
+          </Switch>
       </Router>
   </React.StrictMode>,
   document.getElementById('root')
