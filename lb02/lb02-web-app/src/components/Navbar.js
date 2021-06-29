@@ -73,7 +73,7 @@ const NavBtn = styled.div`
 const Navbar = ({toggle}) => {
     return (
         <Nav>
-            <Logo>Aschvin</Logo>
+            <Logo>Aschvin's IT</Logo>
             <MenuBars onClick={toggle}/>
             <NavMenu>
                 {menuData.map((item, index) => (
@@ -83,7 +83,7 @@ const Navbar = ({toggle}) => {
                 ))}
             </NavMenu>
             <NavBtn>
-                <Button to={'/contact'} primary={true}>Contact Me</Button>
+                <Button to={'/impressum'} primary={true}>Contact Me</Button>
             </NavBtn>
         </Nav>
     )
